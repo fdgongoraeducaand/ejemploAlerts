@@ -16,4 +16,6 @@
    <Button mnemonicParsing="false" onAction="#onBtnInformacion" text="Informacion" />
     <Button onAction="#onBtnModalSiNo" text="Modal - Si / no" />
    <Label fx:id="lblResultadoModal" text="Resultado del Alert Modal - " />
+   <Button mnemonicParsing="false" onAction="#onBtnBotonesPersonalizados" text="Botón con botones e iconos personalizados" />
+   <Label fx:id="lblResultadoBotones" text="Resultado del menu con botones - " />
 </VBox>

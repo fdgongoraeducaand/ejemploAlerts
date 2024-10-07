@@ -13,6 +13,8 @@ public class HelloController {
     private Label welcomeText;
     @FXML
     private Label lblResultadoModal;
+    @FXML
+    private Label lblResultadoBotones;
 
     @FXML
     protected void onHelloButtonClick() {
@@ -70,5 +72,33 @@ public class HelloController {
 
         // Mostrar la alerta
         alert.showAndWait();
+    }
+
+    @FXML
+    public void onBtnBotonesPersonalizados(ActionEvent actionEvent) {
+        // Crear una alerta de confirmación con botones personalizados
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Confirmación");
+        alert.setHeaderText("¿Estás seguro?");
+        alert.setContentText("Esta    acción no se puede deshacer.");
+
+       // Crear los botones
+        ButtonType buttonTypeOne = new ButtonType("Sí");
+        ButtonType buttonTypeTwo = new ButtonType("No");
+        ButtonType buttonTypeThree = new ButtonType("Cancelar");
+
+        // Agregar los botones a la alerta
+        alert.getButtonTypes().setAll(buttonTypeOne, buttonTypeTwo, buttonTypeThree);
+
+        // Mostrar la alerta y obtener el botón seleccionado
+        ButtonType result = alert.showAndWait().orElse(buttonTypeThree);
+
+        if (result == buttonTypeOne) {
+            lblResultadoBotones.setText("Se seleccionó Sí");
+        } else if (result == buttonTypeTwo) {
+            lblResultadoBotones.setText("Se seleccionó No");
+        } else {
+            lblResultadoBotones.setText("Se canceló");
+        }
     }
 }
