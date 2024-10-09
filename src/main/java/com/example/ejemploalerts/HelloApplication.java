@@ -11,7 +11,7 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 300);
+        Scene scene = new Scene(fxmlLoader.load(), 320, 340);
         stage.setTitle("Ejemplo de usos de ventanas de Alerta");
         stage.setResizable(false);
         stage.setScene(scene);
